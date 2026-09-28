@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --tv-blue: #2962ff;
+    --tv-blue-hover: #1e53e5;
+    --tv-green: #089981;
+    --tv-green-bg: #e7f7f3;
+    --tv-red: #f23645;
+    --tv-red-bg: #fdecee;
+    --tv-border: #e0e3eb;
+    --tv-bg: #ffffff;
+    --tv-card: #ffffff;
+    --tv-bg-subtle: #f0f3fa;
+    --tv-text-primary: #131722;
+    --tv-text-secondary: #6a6d78;
+    --tv-text-muted: #9598a1;
+  }
+
+  .dark {
+    --tv-blue: #2962ff;
+    --tv-blue-hover: #3871ff;
+    --tv-green: #089981;
+    --tv-green-bg: rgba(8, 153, 129, 0.16);
+    --tv-red: #f23645;
+    --tv-red-bg: rgba(242, 54, 69, 0.16);
+    --tv-border: #2a2e39;
+    --tv-bg: #131722;
+    --tv-card: #1e222d;
+    --tv-bg-subtle: #2a2e39;
+    --tv-text-primary: #d1d4dc;
+    --tv-text-secondary: #787b86;
+    --tv-text-muted: #5d606b;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Trebuchet MS", "Plus Jakarta Sans", Roboto, Ubuntu, sans-serif;
+    color: var(--tv-text-primary);
+    background-color: var(--tv-bg);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.tv-btn-gradient {
+  background: linear-gradient(135deg, #1e53e5 0%, #7c3aed 100%);
+  box-shadow: 0 2px 8px rgba(41, 98, 255, 0.25);
+}
+.tv-btn-gradient:hover {
+  opacity: 0.95;
+}
+
+@keyframes price-flash-green {
+  0% { background-color: rgba(8, 153, 129, 0.35); }
+  100% { background-color: transparent; }
+}
+
+@keyframes price-flash-red {
+  0% { background-color: rgba(242, 54, 69, 0.35); }
+  100% { background-color: transparent; }
+}
+
+.flash-up {
+  animation: price-flash-green 1s ease-out;
+}
+
+.flash-down {
+  animation: price-flash-red 1s ease-out;
+}
+
